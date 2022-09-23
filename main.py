@@ -4,7 +4,6 @@ import os
 from requests.exceptions import HTTPError
 import argparse
 
-
 load_dotenv()
 
 
@@ -48,7 +47,7 @@ def main():
     args = parser.parse_args()
 
 
-    bitly_token = '17c09e22ad155405159ca1977542fecf00231da7'
+    bitly_token = os.getevn('BITLY_TOKEN')
     url = args.url
 
     try: 
