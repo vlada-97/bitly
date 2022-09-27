@@ -40,8 +40,9 @@ def is_bitlink(bitly_token, url):
 
 
 def main():
+    load_dotenv()
     parser = argparse.ArgumentParser()
-    parser.add_argument("url", type= str)
+    parser.add_argument("url")
     args = parser.parse_args()
 
 
@@ -52,7 +53,7 @@ def main():
         if is_bitlink(bitly_token, url):
             print("Переходов по ссылке:{}".format(count_clicks(bitly_token, url)))
         else:
-                print(shorten_link(bitly_token, url))
+            print(shorten_link(bitly_token, url))
     except HTTPError:
         print("Неправильная ссылка: ", url)
 
