@@ -1,8 +1,10 @@
-from dotenv import load_dotenv, find_dotenv
-import requests
 import os
-from requests.exceptions import HTTPError
 import argparse
+
+import requests
+from requests.exceptions import HTTPError
+
+from dotenv import load_dotenv
 
 
 def shorten_link(bitly_token, url):
